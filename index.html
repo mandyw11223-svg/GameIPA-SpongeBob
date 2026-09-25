@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan SpongeBob IPA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="startScreen" class="screen">
+        <div class="panel start-panel">
+            <div class="logo">🌊 PETUALANGAN IPA 🌊</div>
+            <h1>Ekspedisi Bikini Bottom</h1>
+            <p>Bantu SpongeBob melewati 3 level, kumpulkan koin, dan jawab soal IPA!</p>
+            <div class="howto">
+                <span>⬅️➡️ Bergerak</span>
+                <span>⬆️ Lompat</span>
+                <span>🪙 Koin = Soal IPA</span>
+            </div>
+            <button id="startButton">▶ MULAI PETUALANGAN</button>
+        </div>
+    </div>
+
+    <header class="topbar">
+        <div class="brand">🧽 PETUALANGAN IPA</div>
+        <div class="hud">
+            <div>❤️ <b id="lives">3</b></div>
+            <div>🪙 <b id="coins">0</b>/<b id="coinTarget">4</b></div>
+            <div>⭐ <b id="score">0</b></div>
+            <div>🌊 Level <b id="level">1</b>/3</div>
+        </div>
+    </header>
+
+    <main class="game-shell">
+        <canvas id="gameCanvas" width="1000" height="560"></canvas>
+
+        <div id="quizOverlay" class="overlay hidden">
+            <div class="quiz-card">
+                <div class="quiz-tag">🧠 MISI IPA</div>
+                <div class="progress" id="quizProgress"></div>
+                <h2 id="question"></h2>
+                <div id="answers" class="answers"></div>
+                <div id="feedback"></div>
+            </div>
+        </div>
+
+        <div id="pauseOverlay" class="overlay hidden">
+            <div class="pause-card">
+                <h2>⏸️ Game Dijeda</h2>
+                <p>Tekan <b>P</b> untuk melanjutkan.</p>
+            </div>
+        </div>
+
+        <div id="finishOverlay" class="overlay hidden">
+            <div class="finish-card">
+                <div class="big-icon" id="finishIcon">🎉</div>
+                <h2 id="finishTitle"></h2>
+                <p id="finishText"></p>
+                <button id="restartButton">🔄 MAIN LAGI</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="tips">
+        <span>A / ← : kiri</span>
+        <span>D / → : kanan</span>
+        <span>W / ↑ / Spasi : lompat</span>
+        <span>P : pause</span>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
